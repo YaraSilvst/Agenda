@@ -45,7 +45,8 @@ void cadastro() {
             scanf("%s", contatos[cont].anotacoes);
             }
         } else
-                printf("Agenda Cheia");
+        
+            printf("Agenda Cheia");
             printf("\nDeseja cadastrar outro contato?: \n");
             printf("1 - Sim\n");
             printf("2 - Nao\n");
@@ -89,7 +90,7 @@ void buscar() {
         } 
 
     if (cont == 10) {
-        printf("Contato nao cadastrado");
+        printf("Contato nao cadastrado!");
     }  
 }
 
@@ -127,12 +128,31 @@ void alterar(){
         } 
 
     if (cont == 10) {
-        printf("Contato nao cadastrado");
+        printf("Contato nao cadastrado!");
     }  
+}
+
+void excluir() {
+    int codigo;
+
+    printf("\nInforme o codigo do contato que deseja alterar: ");
+    scanf("%d", &codigo);
+    printf("Contato excluido!\n");
+
+    for(cont = 0; cont < 10; cont++) {
+
+        if(contatos[cont].codigo == codigo) {
+            contatos[cont].codigo = 0;
+            break;
+        }
+    }
+        if(cont == 0); {
+            ("Contato nao encontrado!\n");
+        }
 }
     
 
- void menu() {
+void menu() {
 
     int OpMenu;
      do 
@@ -167,7 +187,7 @@ void alterar(){
                 break;
 
             case 5:
-                //excluir
+                excluir();
                 break;
 
             case 0:
